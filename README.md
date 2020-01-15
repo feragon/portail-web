@@ -1,5 +1,4 @@
 # Projet de Portail Web d'Entreprise
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5b3d47e80f7f4b568fe31b9d5e1e1ea3)](https://www.codacy.com/manual/florian.romeo/portail-web)
 [![DeepScan grade](https://deepscan.io/api/teams/6738/projects/8858/branches/113039/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=6738&pid=8858&bid=113039)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
