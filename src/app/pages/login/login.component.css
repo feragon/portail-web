@@ -1,0 +1,17 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card {
+  width: 30rem;
+  margin: auto;
+}
+
+mat-card-actions {
+  margin: auto;
+}
+
+.ttt {
+  height: 100%;
+}
