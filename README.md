@@ -1,5 +1,6 @@
 # Projet de Portail Web d'Entreprise
 [![DeepScan grade](https://deepscan.io/api/teams/6738/projects/8858/branches/113039/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=6738&pid=8858&bid=113039)
+[![Travis CI status](https://travis-ci.org/feragon/portail-web.svg?branch=master)](https://travis-ci.org/feragon/portail-web)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
