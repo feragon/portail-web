@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
+import {AngularFireModule} from '@angular/fire';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -14,20 +14,22 @@ import {
   MatSliderModule
 } from '@angular/material';
 import {LoginComponent} from './pages/login/login.component';
-import { environment } from '../environments/environment';
+import {environment} from '../environments/environment';
 import {ReactiveFormsModule} from '@angular/forms';
-import { TestComponent } from './test/test.component';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import {TestComponent} from './test/test.component';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AppRoutingModule} from './app-routing.module';
 import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
-import { HomeComponent } from './pages/home/home.component';
+import {HomeComponent} from './pages/home/home.component';
+import {LogoutComponent} from './pages/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     TestComponent,
-    HomeComponent
+    HomeComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -49,4 +51,5 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

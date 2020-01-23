@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
   }
 
   getUserName() {
+    if (this.firebase.auth.currentUser == null) {
+      return null;
+    }
     return this.firebase.auth.currentUser.email;
   }
 
