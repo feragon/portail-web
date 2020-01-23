@@ -1,17 +1,13 @@
-.example-container {
-  display: flex;
-  flex-direction: column;
-}
-
 mat-card {
   width: 30rem;
   margin: auto;
 }
 
-mat-card-actions {
-  margin: auto;
+mat-card-content {
+  display: flex;
+  flex-direction: column;
 }
 
-.ttt {
-  height: 100%;
+mat-card-actions {
+  margin: auto;
 }
