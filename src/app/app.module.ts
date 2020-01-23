@@ -8,6 +8,8 @@ import {MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatIn
 import {LoginComponent} from './pages/login/login.component';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import {AppRoutingModule} from './app-routing.module';
+import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    AngularFireAuthGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
