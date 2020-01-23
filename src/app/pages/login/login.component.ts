@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {AngularFireAuth} from '@angular/fire/auth';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,9 @@ export class LoginComponent implements OnInit {
   loginForm = this.fb.group({email: this.email, password: this.password});
   hide = true;
 
-  constructor(private fb: FormBuilder, private fba: AngularFireAuth) { }
+  constructor(private fb: FormBuilder,
+              private fba: AngularFireAuth,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -27,10 +30,8 @@ export class LoginComponent implements OnInit {
         console.error(reason);
       })
       .then(value => {
-        console.log(value);
-        alert(value);
+        return this.router.navigate(['/']);
       });
-
   }
 
   getEmailErrorMessage() {

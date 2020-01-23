@@ -21,7 +21,6 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AppRoutingModule} from './app-routing.module';
 import {AngularFireAuthGuard} from '@angular/fire/auth-guard';
 import {HomeComponent} from './pages/home/home.component';
-import {LogoutComponent} from './pages/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import {LogoutComponent} from './pages/logout/logout.component';
     LoginComponent,
     TestComponent,
     HomeComponent,
-    LogoutComponent
   ],
   imports: [
     BrowserModule,
