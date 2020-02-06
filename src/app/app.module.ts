@@ -30,6 +30,8 @@ import { DashboradComponent } from './pages/dashborad/dashborad.component';
 import {LogoutComponent} from './pages/logout/logout.component';
 import { TrombinoscopeComponent } from './pages/trombinoscope/trombinoscope.component';
 import { NewsComponent } from './pages/news/news.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+import { UserComponent } from './component/user/user.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { NewsComponent } from './pages/news/news.component';
     LogoutComponent,
     TrombinoscopeComponent,
     NewsComponent,
+    DocumentsComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
