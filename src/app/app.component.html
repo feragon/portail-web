@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div *ngIf="userService.isUserLogged(); then ifBlock else elseBlock"></div>
+<ng-template #ifBlock>
+  <app-component-nav></app-component-nav>
+</ng-template>
+<ng-template #elseBlock>
+  <router-outlet></router-outlet>
+</ng-template>
+

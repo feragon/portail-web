@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
+import {UserService} from '../../user.service';
 
 
 @Component({
@@ -18,20 +19,17 @@ export class LoginComponent implements OnInit {
   hide = true;
 
   constructor(private fb: FormBuilder,
-              private fba: AngularFireAuth,
-              private router: Router) { }
+              private router: Router,
+              private userService: UserService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.fba.auth.signInWithEmailAndPassword(this.email.value, this.password.value)
-      .catch(reason => {
-        console.error(reason);
-      })
-      .then(value => {
-        return this.router.navigate(['/']);
-      });
+    const result = this.userService.login(this.email.value, this.password.value);
+    result.then(value => {
+      this.router.navigate(['/']);
+    });
   }
 
   getEmailErrorMessage() {

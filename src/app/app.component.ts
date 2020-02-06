@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
+import {UserService} from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +11,5 @@ import {Router} from '@angular/router';
 export class AppComponent {
   title = 'Angular';
 
-  constructor(private fba: AngularFireAuth,
-              private router: Router
-  ) { }
-
-  logout() {
-    return this.fba.auth.signOut().then(
-      value => {
-        return this.router.navigate(['/login']);
-      }
-    );
-  }
+  constructor(private userService: UserService) { }
 }
