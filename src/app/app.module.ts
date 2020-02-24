@@ -32,6 +32,7 @@ import { TrombinoscopeComponent } from './pages/trombinoscope/trombinoscope.comp
 import { NewsComponent } from './pages/news/news.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { UserComponent } from './component/user/user.component';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { UserComponent } from './component/user/user.component';
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
+    AngularFirestoreModule,
   ],
   providers: [
     AngularFireAuthGuard,

@@ -1,1 +1,7 @@
-<p>news works!</p>
+<ng-container>
+  <mat-card *ngFor="let item of news | async">
+    <mat-card-title>{{ item.title }}</mat-card-title>
+    <mat-card-subtitle>{{ item.date }}</mat-card-subtitle>
+    <mat-card-content>{{ item.content }}</mat-card-content>
+  </mat-card>
+</ng-container>
