@@ -1,1 +1,8 @@
-<p>documents works!</p>
+<ul>
+  <li *ngFor="let folder of folders">
+    <a (click)="changeFolder(folder.fullPath)">{{ folder.name }}</a>
+  </li>
+  <li *ngFor="let file of files | keyvalue">
+    <a href="{{ file.value }}">{{ file.key.name }}</a>
+  </li>
+</ul>

@@ -33,6 +33,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { UserComponent } from './component/user/user.component';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     MatListModule,
     MatMenuModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
   ],
   providers: [
     AngularFireAuthGuard,
