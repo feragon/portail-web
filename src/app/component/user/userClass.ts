@@ -2,6 +2,6 @@ class User {
   firstname: string;
   lastname: string;
   email: string;
-  pictureUrl: string;
+  picture_url: string;
   position: string;
 }
