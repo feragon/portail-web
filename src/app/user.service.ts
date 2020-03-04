@@ -38,4 +38,9 @@ export class UserService {
     return this.fba.auth.currentUser.email;
   }
 
+  getRole() {
+    return this.fba.auth.currentUser.getIdTokenResult().then(token => {
+      return token.claims.role;
+    });
+  }
 }

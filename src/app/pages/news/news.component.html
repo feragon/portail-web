@@ -1,8 +1,8 @@
 <div class="list-news">
+  <app-new-news *ngIf="canCreateNews"></app-new-news>
   <mat-card *ngFor="let item of news | async" class="news">
     <mat-card-title>{{ item.title }}</mat-card-title>
     <mat-card-subtitle>{{ item.date.toDate().toLocaleDateString() }}</mat-card-subtitle>
     <mat-card-content>{{ item.content }}</mat-card-content>
   </mat-card>
-  <app-new-news></app-new-news>
 </div>
