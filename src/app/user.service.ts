@@ -15,11 +15,9 @@ export class UserService {
   constructor(private fba: AngularFireAuth,
               private fdb: AngularFirestore,
               private router: Router) {
+
     this.itemsCollection = fdb.collection<User>('user');
-    console.log(this.itemsCollection);
-    // this.itemsCollection = fdb.collection<any>('user');
     this.items = this.itemsCollection.valueChanges();
-    console.log(this.items);
   }
 
   login(email: string, password: string): Promise<firebase.auth.UserCredential> {

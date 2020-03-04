@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
+import {News} from './newsClass';
 
 @Component({
   selector: 'app-news',
@@ -8,12 +9,12 @@ import {Observable} from 'rxjs';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-  private news: Observable<any[]>;
+  private news: Observable<News[]>;
 
   constructor(private db: AngularFirestore) { }
 
   ngOnInit() {
-    this.news = this.db.collection('actualites').valueChanges();
+    this.news = this.db.collection<News>('actualites').valueChanges();
   }
 
 }

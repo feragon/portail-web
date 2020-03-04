@@ -34,6 +34,7 @@ import { DocumentsComponent } from './pages/documents/documents.component';
 import { UserComponent } from './component/user/user.component';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
+import { NewNewsComponent } from './component/new-news/new-news.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
     NewsComponent,
     DocumentsComponent,
     UserComponent,
+    NewNewsComponent,
   ],
   imports: [
     BrowserModule,

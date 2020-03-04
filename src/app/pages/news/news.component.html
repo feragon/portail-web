@@ -1,7 +1,8 @@
-<ng-container>
-  <mat-card *ngFor="let item of news | async">
+<div class="list-news">
+  <mat-card *ngFor="let item of news | async" class="news">
     <mat-card-title>{{ item.title }}</mat-card-title>
-    <mat-card-subtitle>{{ item.date }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ item.date.toDate().toLocaleDateString() }}</mat-card-subtitle>
     <mat-card-content>{{ item.content }}</mat-card-content>
   </mat-card>
-</ng-container>
+  <app-new-news></app-new-news>
+</div>
