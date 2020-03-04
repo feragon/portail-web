@@ -1,14 +1,26 @@
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  private itemsCollection: AngularFirestoreCollection<User>;
+  items: Observable<User[]>;
+
   constructor(private fba: AngularFireAuth,
-              private router: Router) { }
+              private fdb: AngularFirestore,
+              private router: Router) {
+    this.itemsCollection = fdb.collection<User>('user');
+    console.log(this.itemsCollection);
+    // this.itemsCollection = fdb.collection<any>('user');
+    this.items = this.itemsCollection.valueChanges();
+    console.log(this.items);
+  }
 
   login(email: string, password: string): Promise<firebase.auth.UserCredential> {
     return this.fba.auth.signInWithEmailAndPassword(email, password);
@@ -27,4 +39,5 @@ export class UserService {
   getUser() {
     return this.fba.auth.currentUser.email;
   }
+
 }

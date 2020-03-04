@@ -1,9 +1,5 @@
 <div class="list-user">
-  <app-user class="user"></app-user>
-  <app-user class="user"></app-user>
-  <app-user class="user"></app-user>
-  <app-user class="user"></app-user>
-  <app-user class="user"></app-user>
-  <app-user class="user"></app-user>
-  <app-user class="user"></app-user>
+  <div *ngFor="let user of this.userService.items | async" class="user">
+    <app-user [user]=user></app-user>
+  </div>
 </div>
