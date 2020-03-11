@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AngularFireStorage} from '@angular/fire/storage';
-import {AngularFirestore, DocumentData} from '@angular/fire/firestore';
 import {News} from '../news/newsClass';
 import {NewsServiceService} from '../../news-service.service';
 import {Observable} from 'rxjs';

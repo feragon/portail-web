@@ -3,7 +3,6 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
-import {News} from './pages/news/newsClass';
 import {take} from 'rxjs/operators';
 
 @Injectable({
