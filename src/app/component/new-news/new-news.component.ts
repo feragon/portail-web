@@ -26,6 +26,9 @@ export class NewNewsComponent implements OnInit {
     const news: News = {title: this.title.value, content: this.content.value, date: Timestamp.now()};
 
     this.newsService.createNews(news);
+
+    this.title.reset();
+    this.content.reset();
   }
 
 }
