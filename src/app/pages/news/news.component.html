@@ -3,6 +3,6 @@
   <mat-card *ngFor="let item of news | async" class="news">
     <mat-card-title>{{ item.title }}</mat-card-title>
     <mat-card-subtitle>{{ item.date.toDate().toLocaleDateString() }}</mat-card-subtitle>
-    <mat-card-content>{{ item.content }}</mat-card-content>
+    <mat-card-content [innerHTML]="item.content"></mat-card-content>
   </mat-card>
 </div>
