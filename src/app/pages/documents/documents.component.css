@@ -1,0 +1,7 @@
+.doc-link {
+  text-decoration: underline;
+}
+
+.doc-link:hover {
+  color: cadetblue;
+}

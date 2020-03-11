@@ -1,5 +1,5 @@
-<a (click)="changeFolder('')">/ </a>
-<span *ngFor="let pathPart of path"> <a (click)="changeFolder(pathPart[1])" *ngIf="pathPart[0].length > 0">{{ pathPart[0] }} / </a></span>
+<a (click)="changeFolder('')" class="doc-link">/ </a>
+<span *ngFor="let pathPart of path"> <a (click)="changeFolder(pathPart[1])" *ngIf="pathPart[0].length > 0" class="doc-link"> &#x21E8; {{ pathPart[0] }}</a></span>
 
 <ul>
   <li *ngFor="let folder of folders">
