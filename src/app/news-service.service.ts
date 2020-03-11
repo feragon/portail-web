@@ -17,6 +17,10 @@ export class NewsServiceService {
     return this.fdb.collection<News>('actualites', ref => ref.orderBy('date', 'desc')).valueChanges();
   }
 
+  getLatestNews() {
+    return this.fdb.collection<News>('actualites', ref => ref.orderBy('date', 'desc')).valueChanges().pipe(take((1)));
+  }
+
   createNews(news: News) {
     return this.fdb.collection<News>('actualites').add(news);
   }

@@ -3,6 +3,8 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
+import {News} from './pages/news/newsClass';
+import {take} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +44,9 @@ export class UserService {
     return this.fba.auth.currentUser.getIdTokenResult().then(token => {
       return token.claims.role;
     });
+  }
+
+  getOneUser() {
+    return this.fdb.collection<User>('user').valueChanges().pipe(take((1)));
   }
 }
