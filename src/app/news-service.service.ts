@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
-import {Observable} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
 import {News} from './pages/news/newsClass';
-import {retry} from 'rxjs/operators';
+import {take} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +18,6 @@ export class NewsServiceService {
   }
 
   createNews(news: News) {
-    console.log(news);
-    this.fdb.collection<News>('actualites').add(news);
+    return this.fdb.collection<News>('actualites').add(news);
   }
 }
