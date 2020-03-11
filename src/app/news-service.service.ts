@@ -15,7 +15,7 @@ export class NewsServiceService {
   }
 
   getNews() {
-    return this.fdb.collection<News>('actualites').valueChanges();
+    return this.fdb.collection<News>('actualites', ref => ref.orderBy('date', 'desc')).valueChanges();
   }
 
   createNews(news: News) {
