@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireStorage} from '@angular/fire/storage';
+import {faFolder} from '@fortawesome/free-solid-svg-icons';
 import Reference = firebase.storage.Reference;
-import { faFolder } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-documents',
@@ -26,21 +26,21 @@ export class DocumentsComponent implements OnInit {
     const pathParts = path.split('/');
     let pathPrefix = '';
 
-    for(const pathPartIndex in pathParts) {
-      this.path.push([pathParts[pathPartIndex], pathPrefix + pathParts[pathPartIndex]]);
-      pathPrefix += pathParts[pathPartIndex] + '/';
+    for (const pathPart of pathParts) {
+      this.path.push([pathPart, pathPrefix + pathPart]);
+      pathPrefix += pathPart + '/';
     }
 
     this.folders = Array<Reference>();
     this.files = new Map<Reference, string>();
 
     this.afs.storage.ref(path).listAll().then(listResult => {
-      for (const folderId in listResult.prefixes) {
-        this.folders.push(listResult.prefixes[folderId]);
+      for (const prefix of listResult.prefixes) {
+        this.folders.push(prefix);
       }
 
-      for (const itemId in listResult.items) {
-        const file = listResult.items[itemId];
+      for (const item of listResult.items) {
+        const file = item;
 
         file.getDownloadURL().then(value => {
           this.files.set(file, value);
