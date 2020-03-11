@@ -1,8 +1,11 @@
+<a (click)="changeFolder('')">/ </a>
+<span *ngFor="let pathPart of path"> <a (click)="changeFolder(pathPart[1])" *ngIf="pathPart[0].length > 0">{{ pathPart[0] }} / </a></span>
+
 <ul>
   <li *ngFor="let folder of folders">
-    <a (click)="changeFolder(folder.fullPath)">{{ folder.name }}</a>
+    <a (click)="changeFolder(folder.fullPath)"><fa-icon [icon]="faFolder"></fa-icon> {{ folder.name }}</a>
   </li>
   <li *ngFor="let file of files | keyvalue">
-    <a href="{{ file.value }}">{{ file.key.name }}</a>
+    <a href="{{ file.value }}" target="_blank">{{ file.key.name }}</a>
   </li>
 </ul>

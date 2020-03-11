@@ -35,6 +35,7 @@ import { UserComponent } from './component/user/user.component';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import { NewNewsComponent } from './component/new-news/new-news.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { NewNewsComponent } from './component/new-news/new-news.component';
     MatMenuModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    FontAwesomeModule,
   ],
   providers: [
     AngularFireAuthGuard,
